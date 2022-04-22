@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIOTDemoOne</title>
+    <link rel="stylesheet" href="/static/css/zbase.css">
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css"
+        integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div id="crisp">
+    </div>
+
+
+
+    <div id="backgroundR" style="background-image: url(/static/image/background/bg.gif);">
+        背景
+        <div class="form-check" id="backgroundChoose">
+            <input class="form-check-input" type="radio" name="bg" id="bg1" value="backgroundOne.gif" checked>
+            <label class="form-check-label" for="bg1">
+                backgroundOne
+                <img src="/static/image/background/backgroundOne.gif" style="width: 300px; height: 300px;" alt="">
+            </label>
+
+            <input class="form-check-input" type="radio" name="bg" id="bg2" value="backgroundTwo2_b.gif">
+            <label class="form-check-label" for="bg2">
+                backgroundTwo
+                <img src="/static/image/background/backgroundTwo2_b.gif" style="width: 300px; height: 300px;" alt="">
+            </label>
+            <input class="form-check-input" type="radio" name="bg" id="bg3" value="backgroundThree.gif">
+            <label class="form-check-label" for="bg2">
+                backgroundThree
+                <img src="/static/image/background/backgroundThree.gif" style="width: 300px; height: 300px;" alt="">
+            </label>
+            <input class="form-check-input" type="radio" name="bg" id="bg4" value="backgroundFour.gif">
+            <label class="form-check-label" for="bg4">
+                backgroundFour
+                <img src="/static/image/background/backgroundFour.gif" style="width: 300px; height: 300px;" alt="">
+            </label>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="form-check" id="chChoose">
+            玩家一
+            <input class="form-check-input" type="radio" name="ch" id="ch11" value="chOne">
+            <label class="form-check-label" for="ch1">
+                chOne
+                <img src="/static/image/chOne/0.gif" alt="">
+            </label>
+
+            <input class="form-check-input" type="radio" name="ch" id="ch22" value="chTwo" checked>
+            <label class="form-check-label" for="ch2">
+                chTwo
+                <img src="/static/image/chTwo/0.gif" alt="">
+            </label>
+
+            <input class="form-check-input" type="radio" name="ch" id="ch33" value="chThree">
+            <label class="form-check-label" for="ch3">
+                chThree
+                <img src="/static/image/chThree/0.gif" alt="">
+            </label>
+
+            <input class="form-check-input" type="radio" name="ch" id="ch44" value="chFour">
+            <label class="form-check-label" for="ch4">
+                chFour
+                <img src="/static/image/chFour/0.gif" alt="">
+            </label>
+
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="form-check" id="chChoose2">
+            玩家二
+            <input class="form-check-input" type="radio" name="ch2" id="ch1" value="chOne">
+            <label class="form-check-label" for="ch1">
+                chOne
+                <img src="/static/image/chOne/0.gif" alt="">
+            </label>
+
+            <input class="form-check-input" type="radio" name="ch2" id="ch2" value="chTwo">
+            <label class="form-check-label" for="ch2">
+                chTwo
+                <img src="/static/image/chTwo/0.gif" alt="">
+            </label>
+
+            <input class="form-check-input" type="radio" name="ch2" id="ch3" value="chThree">
+            <label class="form-check-label" for="ch3">
+                chThree
+                <img src="/static/image/chThree/0.gif" alt="">
+            </label>
+
+            <input class="form-check-input" type="radio" name="ch2" id="ch4" value="chFour" checked>
+            <label class="form-check-label" for="ch4">
+                chFour
+                <img src="/static/image/chFour/0.gif" alt="">
+            </label>
+
+        </div>
+
+        <button type="button" class="btn btn-primary" id="btnStart">开始</button>
+
+        <script type="module">
+            import { Main } from "/static/js/zbase.js"
+            $(function () {
+                $('#crisp').hide();
+                $('#btnStart').click(function () {
+                    console.log(($('input[name=bg]:checked').val()));
+                    console.log(($('input[name=ch]:checked').val()));
+                    console.log(($('input[name=ch2]:checked').val()));
+                    $('#backgroundR').hide();
+                    $('#crisp').show();
+                    let main = new Main('crisp', ($('input[name=bg]:checked').val()), ($('input[name=ch]:checked').val()), ($('input[name=ch2]:checked').val()));
+                }
+                )
+
+            });
+        </script>
+</body>
+
+
+</html>
